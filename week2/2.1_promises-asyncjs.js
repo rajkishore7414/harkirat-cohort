@@ -6,6 +6,10 @@ function cube(n) {
     return n * n * n;
 }
 
+function quad(n) {
+    return n * n * n * n;
+}
+
 function sumOfSquares(a, b) {
     let square1 = square(a);
     let square2 = square(b);
@@ -19,8 +23,25 @@ function sumOfCubes(a, b) {
 }
 
 
+// generic fn - callback fn/ this called callback which is passing fn as an argument/ to a fn passed another fn as an argument
+function sumOfSomething (a, b, fn) {
+    let square1 = fn(a);
+    let square2 = fn(b);
+    return square1 + square2;
+}
+
+
+
+
+
+
 let sumSquare = sumOfSquares(2, 2);
-console.log(sumSquare)
+// console.log(sumSquare);
 let sumCube = sumOfCubes(2, 2);
-console.log(sumCube);
+// console.log(sumCube);
+
+
+
+let sumQuad = sumOfSomething(4, 4, quad) //callback fn -(called here)
+// console.log(sumQuad); 
 
